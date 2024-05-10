@@ -1,0 +1,101 @@
+﻿@model IEnumerable<cadastro_materia_prima.Models.Materia>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Lista de matéria-prima</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-success">Adicionar nova matéria-prima</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tipo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ValorEnergetico)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Carboidratos)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AcucaresTotais)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AcucaresAdicionados)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Proteinas)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GordurasTotais)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GordurasSaturadas)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GordurasTrans)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FibraAlimentar)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Sodio)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tipo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ValorEnergetico)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Carboidratos)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AcucaresTotais)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AcucaresAdicionados)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Proteinas)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GordurasTotais)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GordurasSaturadas)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GordurasTrans)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FibraAlimentar)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sodio)
+            </td>
+            <td>
+                <a class="btn btn-warning" asp-action="Edit" asp-route-id="@item.Id">Editar</a>
+                <a class="btn btn-primary" asp-action="Details" asp-route-id="@item.Id">Visualizar</a>
+                <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.Id">Apagar</a>
+            </td>
+        </tr>
+}
+    </tbody> 
+</table>
